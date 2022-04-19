@@ -1,0 +1,151 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white w-100 navigation" id="navbar">
+    <div class="container">
+    <a class="navbar-brand font-weight-bold" routerLink="/">E-Shop</a>
+
+    
+    <!-- Toggle  -->
+    <li class="list-inline-item navbar-toggler">
+        <a routerLink="/">
+            <i class="tf-ion-android-search"></i>
+        </a>
+    </li>
+
+    <li class="list-inline-item navbar-toggler">
+        <a routerLink="/cart">
+            <i class="tf-ion-android-cart"></i>
+        </a>
+    </li>
+
+    <li class="list-inline-item navbar-toggler">
+        <a routerLink="/user">
+            <i class="tf-ion-ios-person"></i>
+        </a>
+    </li>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar"
+        aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Menu -->
+    <div class="collapse navbar-collapse " id="main-navbar">
+        <ul class="navbar-nav mx-auto">
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/">Home </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" routerLink="#">About Us</a>
+        </li>
+
+        <li class="nav-item dropdown dropdown-slide">
+            <a class="nav-link dropdown-toggle" id="navbarDropdown3" role="button" data-delay="350"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" routerLink="/product-all">
+            Shop
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                <li><a routerLink="/">Type1</a></li>
+                <li><a routerLink="/">Type2</a></li>
+                <li><a routerLink="/">Type3</a></li>
+                <li><a routerLink="/">Type4</a></li>
+            </ul>
+        </li>
+        
+        <li class="nav-item" *ngIf="showAdminBoard">
+            <a routerLink="/admin" class="nav-link" routerLink="admin">Admin Board</a>
+        </li>
+        <!-- Account -->
+        <!-- <li class="nav-item dropdown dropdown-slide">
+            <a class="nav-link dropdown-toggle" id="navbarDropdown5" role="button" data-delay="350"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" routerLink="/user">
+            Account 
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown5">
+                <li><a routerLink="/user">Account Dashboard</a></li>
+                <li><a routerLink="/user-details">Account Details</a></li>
+                <li><a routerLink="/user-address">Account Address</a></li>
+                <li><a routerLink="/orders">Orders</a></li>
+                <li><a routerLink="/login">Login Page</a></li>
+                <li><a routerLink="/signup">SignUp Page</a></li>
+                <li><a routerLink="/forgot-password">Forgot Password</a></li>
+            </ul>
+        </li> -->
+        <!-- / Account -->
+
+        </ul>
+    </div>
+    <!-- Navbar-collapse -->
+
+    <ul class="top-menu list-inline mb-0 d-none d-lg-block" id="top-menu">
+        <!-- Search -->
+        <li class="list-inline-item">
+            <a routerLink="#" class="search_toggle" id="search-icon"><i class="tf-ion-android-search"></i></a>
+        </li>
+
+        <!-- Cart -->
+        <li class="dropdown cart-nav dropdown-slide list-inline-item">
+        <a class="dropdown-toggle cart-icon" data-toggle="dropdown" data-hover="dropdown">
+            <i class="tf-ion-android-cart" routerLink="/cart"></i>
+        </a>
+        <div class="dropdown-menu cart-dropdown">
+            <!-- Cart Item -->
+            <div class="media">
+            <a routerLink="/product-single">
+                <img class="media-object img- mr-3" src="assets/images/cart-1.jpg" alt="image" />
+            </a>
+            <div class="media-body">
+                <h6>Ladies Bag</h6>
+                <div class="cart-price">
+                <span>1 x</span>
+                <span>1250.00</span>
+                </div>
+            </div>
+            <a routerLink="#" class="remove"><i class="tf-ion-close"></i></a>
+            </div><!-- / Cart Item -->
+
+            <!-- Cart Item -->
+            <div class="media">
+            <a routerLink="/product-single">
+                <img class="media-object img-fluid mr-3" src="assets/images/cart-2.jpg" alt="image" />
+            </a>
+            <div class="media-body">
+                <h6>Skinny Jeans</h6>
+                <div class="cart-price">
+                <span>1 x</span>
+                <span>1250.00</span>
+                </div>
+            </div>
+            <a routerLink="#" class="remove"><i class="tf-ion-close"></i></a>
+            </div>
+            <!-- / Cart Item -->
+
+            <div class="cart-summary">
+            <span class="h6">Total</span>
+            <span class="total-price h6">$1799.00</span>
+
+            <div class="text-center cart-buttons mt-3">
+                <a routerLink="/cart" class="btn btn-small btn-transparent btn-block">View Cart</a>
+                <a routerLink="/check-out" class="btn btn-small btn-main btn-block">Checkout</a>
+            </div>
+            </div>
+        </div>
+        </li>
+        <!-- Account  -->
+        <li class="list-inline-item nav-item dropdown dropdown-slide">
+            <a class="dropdown-toggle" id="navbarDropdownUser" role="button" data-delay="350"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" (click)="isLogged()" style="cursor: pointer;">
+                <i class="tf-ion-ios-person mr-3" ></i>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownUser" *ngIf="isLoggedIn">
+                <li><a routerLink="/user" style="cursor: pointer;">Thông tin cá nhân</a></li>
+                <li><a (click)="logout()" style="cursor: pointer;">Thoát</a></li>
+            </ul>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownUser" *ngIf="!isLoggedIn">
+                <li><a routerLink="/login">Đăng nhập</a></li>
+                <li><a routerLink="/signup">Đăng kí</a></li>
+            </ul>
+        </li>
+        <!-- End Account -->
+    </ul>
+    </div>
+</nav>
