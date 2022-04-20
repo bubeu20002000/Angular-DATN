@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators'
 import { TokenStorageService } from './token-storage.service';
 
-const URL_provinceVN = 'https://provinces.open-api.vn/api/?depth=3'
+const URL_provinceVN = 'https://provinces.open-api.vn/api'
 
 @Injectable({
   providedIn: 'root'
@@ -36,8 +36,14 @@ export class FunctionsService {
     }
   }
 
-  getAllNames(): Observable<any>{
-    return this.http.get<any>(URL_provinceVN)
+  getAllCities(): Observable<any>{
+    return this.http.get<any>(URL_provinceVN + '/p')
+  }
+  getAllDistricts(): Observable<any>{
+    return this.http.get<any>(URL_provinceVN + '/d')
+  }
+  getAllWards(): Observable<any>{
+    return this.http.get<any>(URL_provinceVN + '/w')
   }
 
 }

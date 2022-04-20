@@ -53,9 +53,14 @@
                         <!-- <input type="text" class="form-control" [(ngModel)]="City" name="City"> -->
                         <mat-form-field appearance="fill">
                             <mat-label>Thành phố/Tỉnh</mat-label>
-                            <mat-select (change)="changeCountry($event)">
-                                <mat-option *ngFor="let res of city">
-                                {{res.name}}
+                            <mat-select
+                            *ngIf="cities"
+                            (selectionChange)="onSelectCity($event)"
+                            name = "selectedCity"
+                            >
+                                <mat-option *ngFor="let c of cities" 
+                                value= {{c.code}}>
+                                    {{c.name}}
                                 </mat-option>
                             </mat-select>
                         </mat-form-field>
@@ -66,9 +71,16 @@
                         <!-- <input type="text" class="form-control" [(ngModel)]="District" name="District"> -->
                         <mat-form-field appearance="fill">
                             <mat-label>Quận/Huyện</mat-label>
-                            <mat-select>
-                                <mat-option *ngFor="let res of district">
-                                {{res.name}}
+                            <mat-select
+                            *ngIf="districts"
+                            (selectionChange)="onSelectDistrict($event)"
+                            name = "selectedDistrict"
+                            >
+                                <mat-option 
+                                *ngFor="let d of filter_districts" 
+                                value = {{d.code}}
+                                >
+                                {{d.name}}
                                 </mat-option>
                             </mat-select>
                         </mat-form-field>
@@ -79,9 +91,13 @@
                         <!-- <input type="text" class="form-control" [(ngModel)]="Ward" name="Ward"> -->
                         <mat-form-field appearance="fill">
                             <mat-label>Phường/Xã</mat-label>
-                            <mat-select>
-                                <mat-option *ngFor="">
-                
+                            <mat-select 
+                            (selectionChange)="onSelectWard($event)"
+                            >
+                                <mat-option
+                                *ngFor="let w of filter_wards" 
+                                value={{w.code}}>
+                                    {{w.name}}
                                 </mat-option>
                             </mat-select>
                         </mat-form-field>

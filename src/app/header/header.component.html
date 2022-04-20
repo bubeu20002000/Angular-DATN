@@ -17,7 +17,7 @@
     </li>
 
     <li class="list-inline-item navbar-toggler">
-        <a routerLink="/user">
+        <a routerLink="/user" (click)="isLogged()">
             <i class="tf-ion-ios-person"></i>
         </a>
     </li>
@@ -54,24 +54,6 @@
         <li class="nav-item" *ngIf="showAdminBoard">
             <a routerLink="/admin" class="nav-link" routerLink="admin">Admin Board</a>
         </li>
-        <!-- Account -->
-        <!-- <li class="nav-item dropdown dropdown-slide">
-            <a class="nav-link dropdown-toggle" id="navbarDropdown5" role="button" data-delay="350"
-            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" routerLink="/user">
-            Account 
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown5">
-                <li><a routerLink="/user">Account Dashboard</a></li>
-                <li><a routerLink="/user-details">Account Details</a></li>
-                <li><a routerLink="/user-address">Account Address</a></li>
-                <li><a routerLink="/orders">Orders</a></li>
-                <li><a routerLink="/login">Login Page</a></li>
-                <li><a routerLink="/signup">SignUp Page</a></li>
-                <li><a routerLink="/forgot-password">Forgot Password</a></li>
-            </ul>
-        </li> -->
-        <!-- / Account -->
-
         </ul>
     </div>
     <!-- Navbar-collapse -->

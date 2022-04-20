@@ -24,11 +24,12 @@ import { MainComponent } from './_admin/main/main.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
+
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { MatInputModule } from '@angular/material/input';
     BrowserAnimationsModule,
     MatSelectModule,
     MatInputModule,
+    ReactiveFormsModule,
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]

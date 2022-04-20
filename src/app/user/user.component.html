@@ -35,7 +35,7 @@
             <a class="nav-link" routerLink="/user-address" >Địa chỉ</a>
         </div>
         <div class="nav flex-column nav-pills">
-            <a class="nav-link" routerLink="/user-details" >Thay đổi</a>
+            <a class="nav-link" routerLink="/user-details" >Thông tin liên lạc</a>
         </div>
         <div class="nav flex-column nav-pills">
             <a class="nav-link" routerLink="" (click)="callLogout()">Thoát</a>
@@ -52,27 +52,27 @@
                 </header>
                 <p>
                     <strong>Tên tài khoản:</strong>
-                    {{currentUser.username}}
+                    {{name}}
                 </p>
                 <p>
                     <strong>Email:</strong>
-                    {{ currentUser.email }}
+                    {{email}}
                 </p>
                 <p>
                     <strong>Số điện thoại:</strong>
-                    {{currentUser.phone_number}}
+                    {{phone_number}}
                 </p>
                 <p>
                     <strong>Địa chỉ:</strong>
-                    {{currentUser.address_1}}
+                    {{address}}
                 </p>
                 <p>
                     <strong>Thành phố:</strong>
-                    {{currentUser.city}} 
+                    {{city}} 
                     <strong>Quận/Huyện:</strong>
-                    {{currentUser.district}}
+                    {{district}}
                     <strong>Phường:</strong>
-                    {{currentUser.ward}} 
+                    {{ward}} 
                 </p>
                 
             </div>
