@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 const TOKEN_KEY = 'auth-token';
 const USER_KEY = 'auth-user';
-const API_URL = 'http://localhost:8080/api/test/';
 @Injectable({
   providedIn: 'root'
 })

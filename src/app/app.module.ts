@@ -21,6 +21,7 @@ import { UserAddressComponent } from './user-address/user-address.component';
 import { UserAddressEditComponent } from './user-address-edit/user-address-edit.component';
 import { PageNotfoundComponent } from './page-notfound/page-notfound.component';
 import { MainComponent } from './_admin/main/main.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
@@ -29,6 +30,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+
 
 
 @NgModule({
@@ -51,6 +54,8 @@ import { MatInputModule } from '@angular/material/input';
     UserAddressEditComponent,
     PageNotfoundComponent,
     MainComponent,
+    ResetPasswordComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -63,6 +68,7 @@ import { MatInputModule } from '@angular/material/input';
     MatSelectModule,
     MatInputModule,
     ReactiveFormsModule,
+    MatFormFieldModule,
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
