@@ -1,40 +1,40 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ProductsingleComponent } from './productsingle/productsingle.component';
-import { HomeComponent } from './home/home.component';
-import { CartComponent } from './cart/cart.component';
-import { CheckoutComponent } from './checkout/checkout.component';
-import { AllproductsComponent } from './allproducts/allproducts.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import { PageHomeComponent } from './page-home/page-home.component';
+import { PageCartComponent } from './page-cart/page-cart.component';
+import { PageCheckoutComponent } from './page-checkout/page-checkout.component';
+import { ProductAllComponent } from './product-all/product-all.component';
 import { UserComponent } from './user/user.component';
-import { OrdersComponent } from './orders/orders.component';
-import { LoginComponent } from './login/login.component';
-import { SignupComponent } from './signup/signup.component';
-import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { PageOrderComponent } from './page-order/page-order.component';
+import { PageLoginComponent } from './page-login/page-login.component';
+import { PageSignupComponent } from './page-signup/page-signup.component';
+import { PasswordForgotComponent } from './password-forgot/password-forgot.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { UserAddressComponent } from './user-address/user-address.component';
 import { UserAddressEditComponent } from './user-address-edit/user-address-edit.component';
 import { PageNotfoundComponent } from './page-notfound/page-notfound.component';
 import { MainComponent } from './_admin/main/main.component';
-import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { PasswordResetComponent } from './password-reset/password-reset.component';
 
 const routes: Routes = [
-  { path:"", component:HomeComponent },
-  { path:"cart", component:CartComponent },
-  { path:"check-out", component:CheckoutComponent },
-  { path:"orders", component:OrdersComponent },
+  { path:"", component:PageHomeComponent },
+  { path:"cart", component:PageCartComponent },
+  { path:"check-out", component:PageCheckoutComponent },
+  { path:"orders", component:PageOrderComponent },
 
-  { path:"product-all", component:AllproductsComponent },
-  { path:"product-single", component:ProductsingleComponent },
+  { path:"product-all", component:ProductAllComponent },
+  { path:"product-single", component:ProductDetailsComponent },
 
   { path:"user", component:UserComponent },
   { path:"user-details", component:UserDetailsComponent },
   { path:"user-address", component:UserAddressComponent },
   { path:"user-address-edit", component:UserAddressEditComponent },
   
-  { path:"login", component:LoginComponent },
-  { path:"signup", component:SignupComponent },
-  { path:"forgot-password", component:ForgotPasswordComponent },
-  { path:"reset-password", component:ResetPasswordComponent },
+  { path:"login", component:PageLoginComponent },
+  { path:"signup", component:PageSignupComponent },
+  { path:"forgot-password", component:PasswordForgotComponent },
+  { path:"reset-password", component:PasswordResetComponent },
 
   {path: '404', component: PageNotfoundComponent},
   {path: '**', redirectTo: '/404'},

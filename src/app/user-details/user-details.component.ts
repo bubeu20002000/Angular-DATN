@@ -1,9 +1,9 @@
 import { analyzeAndValidateNgModules } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { FunctionsService } from '../services/functions.service';
-import { TokenStorageService } from '../services/token-storage.service';
-import { UserService } from '../services/user.service';
+import { FunctionsService } from '../_services/functions.service';
+import { TokenStorageService } from '../_services/token-storage.service';
+import { UserService } from '../_services/user.service';
 
 @Component({
   selector: 'app-user-details',

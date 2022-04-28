@@ -3,25 +3,25 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { HomeComponent } from './home/home.component';
+import { PageHeaderComponent } from './page-header/page-header.component';
+import { PageFooterComponent } from './page-footer/page-footer.component';
+import { PageHomeComponent } from './page-home/page-home.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
-import { ProductsingleComponent } from './productsingle/productsingle.component';
-import { CartComponent } from './cart/cart.component';
-import { CheckoutComponent } from './checkout/checkout.component';
-import { AllproductsComponent } from './allproducts/allproducts.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import { PageCartComponent } from './page-cart/page-cart.component';
+import { PageCheckoutComponent } from './page-checkout/page-checkout.component';
+import { ProductAllComponent } from './product-all/product-all.component';
 import { UserComponent } from './user/user.component';
-import { OrdersComponent } from './orders/orders.component';
-import { LoginComponent } from './login/login.component';
-import { SignupComponent } from './signup/signup.component';
-import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { PageOrderComponent } from './page-order/page-order.component';
+import { PageLoginComponent } from './page-login/page-login.component';
+import { PageSignupComponent } from './page-signup/page-signup.component';
+import { PasswordForgotComponent } from './password-forgot/password-forgot.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { UserAddressComponent } from './user-address/user-address.component';
 import { UserAddressEditComponent } from './user-address-edit/user-address-edit.component';
 import { PageNotfoundComponent } from './page-notfound/page-notfound.component';
 import { MainComponent } from './_admin/main/main.component';
-import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { PasswordResetComponent } from './password-reset/password-reset.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
@@ -31,30 +31,30 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-
+import {NgxPaginationModule} from 'ngx-pagination';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    HomeComponent,
-    ProductsingleComponent,
-    CartComponent,
-    CheckoutComponent,
-    AllproductsComponent,
+    PageHeaderComponent,
+    PageFooterComponent,
+    PageHomeComponent,
+    ProductDetailsComponent,
+    PageCartComponent,
+    PageCheckoutComponent,
+    ProductAllComponent,
     UserComponent,
-    OrdersComponent,
-    LoginComponent,
-    SignupComponent,
-    ForgotPasswordComponent,
+    PageOrderComponent,
+    PageLoginComponent,
+    PageSignupComponent,
+    PasswordForgotComponent,
     UserDetailsComponent,
     UserAddressComponent,
     UserAddressEditComponent,
     PageNotfoundComponent,
     MainComponent,
-    ResetPasswordComponent,
+    PasswordResetComponent,
 
   ],
   imports: [
@@ -69,6 +69,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatInputModule,
     ReactiveFormsModule,
     MatFormFieldModule,
+    NgxPaginationModule,
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]

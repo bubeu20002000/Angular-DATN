@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FunctionsService } from '../services/functions.service';
-import { TokenStorageService } from '../services/token-storage.service';
-import { UserService } from '../services/user.service';
+import { FunctionsService } from '../_services/functions.service';
+import { TokenStorageService } from '../_services/token-storage.service';
+import { UserService } from '../_services/user.service';
 import { faCircleArrowLeft, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
