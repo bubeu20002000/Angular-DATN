@@ -38,8 +38,7 @@
 -------------------------------------------------------------------*/
 /*=== MEDIA QUERY ===*/
 /* @import url("https://fonts.googleapis.com/css?family=Poppins:400,700,800|Source+Sans+Pro:400|Catamaran:400,600,700"); */
-@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Source+Sans+Pro&display=swap');
-
+/* @import url('https://fonts.googleapis.com/css2?family=Oswald&family=Source+Sans+Pro&display=swap'); */
 .pointer{
   cursor: pointer;
 }
@@ -1460,8 +1459,10 @@ a.text-primary:hover {
 .product-categories li a {
   color: #000;
 }
+/* Custom */
 
-.custom-control-label.sky-blue::before,
+/* Custom */
+/* .custom-control-label.sky-blue::before,
 .custom-control-input:checked ~ .custom-control-label.sky-blue::before {
   background-color: #00f;
 }
@@ -1494,7 +1495,7 @@ a.text-primary:hover {
   height: 30px;
   width: 30px;
   border: 0;
-}
+} */
 
 .popular-products-item {
   margin-bottom: 20px;

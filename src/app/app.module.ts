@@ -31,7 +31,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import {NgxPaginationModule} from 'ngx-pagination';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatButtonModule } from '@angular/material/button';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 
 @NgModule({
@@ -70,6 +74,9 @@ import {NgxPaginationModule} from 'ngx-pagination';
     ReactiveFormsModule,
     MatFormFieldModule,
     NgxPaginationModule,
+    MatButtonModule,
+    MatRadioModule,
+    MatCheckboxModule,
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
