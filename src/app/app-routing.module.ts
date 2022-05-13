@@ -24,7 +24,7 @@ const routes: Routes = [
   { path:"orders", component:PageOrderComponent },
 
   { path:"product-all", component:ProductAllComponent },
-  { path:"product-single", component:ProductDetailsComponent },
+  { path:"product-single/:id", component:ProductDetailsComponent },
 
   { path:"user", component:UserComponent },
   { path:"user-details", component:UserDetailsComponent },

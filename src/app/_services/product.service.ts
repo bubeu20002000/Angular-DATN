@@ -12,7 +12,11 @@ export class ProductService {
     return this.http.post<any>(API_URL + 'products/' + page + '/' + size, field);
   }
 
-  getInfo(){
+  getInfo() {
     return this.http.get<any>(API_URL + 'products-info');
+  }
+
+  getDetails(id: any) {
+    return this.http.get<any>(API_URL + 'product-details/' + id);
   }
 }

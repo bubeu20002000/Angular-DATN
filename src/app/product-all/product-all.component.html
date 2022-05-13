@@ -63,9 +63,9 @@
 
                         <div class="product">
                             <div class="product-wrap">
-                                <a routerLink="/product-single"><img class="img-fluid w-100 mb-3 img-first"
+                                <a routerLink="/product-single/{{product.id}}"><img class="img-fluid w-100 mb-3 img-first"
                                         src="assets/images/322.jpg" alt="product-img" /></a>
-                                <a routerLink="/product-single"><img class="img-fluid w-100 mb-3 img-second"
+                                <a routerLink="/product-single/{{product.id}}"><img class="img-fluid w-100 mb-3 img-second"
                                         src="assets/images/444.jpg" alt="product-img" /></a>
                             </div>
 
@@ -80,7 +80,7 @@
                                     {{product.prodprice | number}}đ
                                 </span>
                                 <h2 class="product-title h5 mb-0"><a
-                                        routerLink="/product-single">{{product.prodname}}</a></h2>
+                                        routerLink="/product-single/{{product.id}}">{{product.prodname}}</a></h2>
                                 <hr>
                             </div>
                         </div>
@@ -114,12 +114,39 @@
                     <!-- cate -->
                     <section class="widget widget-sizes mb-5">
                         <h3 class="widget-title h4 mb-4">Theo giới tính</h3>
-                        <section class="example-section" [formGroup]="toppings" >
-                            <p><mat-checkbox [checked]="men" formControlName="pepperoni" (change)="changeS($event)">Pepperoni</mat-checkbox></p>
-                            <p><mat-checkbox [checked]="women" formControlName="extracheese" (change)="changeS($event)">Extra Cheese</mat-checkbox></p>
-                            <p><mat-checkbox [checked]="unisex" formControlName="mushroom" (change)="changeS($event)">Mushroom</mat-checkbox></p>
-                          </section>
-
+                        <section [formGroup]="genders">
+                            <mat-checkbox class="mr-1" formControlName="men" [checked]="genders.value.men" (change)="genders.value.women = false;
+                                    genders.value.unisex = false; changeGenders()">Nam</mat-checkbox>
+                            <mat-checkbox class="mr-1" formControlName="women" [checked]="genders.value.women" (change)="genders.value.men = false;
+                                    genders.value.unisex = false; changeGenders()">Nữ</mat-checkbox>
+                            <mat-checkbox class="mr-1" formControlName="unisex" [checked]="genders.value.unisex"
+                                (change)="genders.value.women = false;
+                                    genders.value.men = false; changeGenders()">Unisex</mat-checkbox>
+                        </section>
+                    </section>
+                    <!-- type -->
+                    <section class="widget widget-sizes mb-5">
+                        <h3 class="widget-title h4 mb-4">Theo loại</h3>
+                        <section [formGroup]="types">
+                            <mat-checkbox formControlName="ox" [checked]="types.value.ox"
+                                (change)="types.value.lo=false ;types.value.bo=false ;types.value.sn=false ;types.value.cm=false ;types.value.fl=false;changeTypes();"
+                                class="mr-2">Oxfords</mat-checkbox>
+                            <mat-checkbox formControlName="lo" [checked]="types.value.lo"
+                                (change)=" types.value.ox=false; types.value.bo=false; types.value.sn=false; types.value.cm=false; types.value.fl=false;changeTypes();"
+                                class="mr-2">Loafers</mat-checkbox>
+                            <mat-checkbox formControlName="bo" [checked]="types.value.bo"
+                                (change)=" types.value.ox=false; types.value.lo=false; types.value.sn=false; types.value.cm=false; types.value.fl=false;changeTypes();"
+                                class="mr-2">Boat Shoes</mat-checkbox>
+                            <mat-checkbox formControlName="sn" [checked]="types.value.sn"
+                                (change)=" types.value.ox=false; types.value.lo=false; types.value.bo=false; types.value.cm=false; types.value.fl=false;changeTypes();"
+                                class="mr-2">Sneakers</mat-checkbox>
+                            <mat-checkbox formControlName="cm" [checked]="types.value.cm"
+                                (change)=" types.value.ox=false; types.value.lo=false; types.value.bo=false; types.value.sn=false; types.value.fl=false;changeTypes();"
+                                class="mr-2">Clogs and Mules</mat-checkbox>
+                            <mat-checkbox formControlName="fl" [checked]="types.value.fl"
+                                (change)=" types.value.ox=false; types.value.lo=false; types.value.bo=false; types.value.sn=false; types.value.cm=false;changeTypes();"
+                                class="mr-2">Flats</mat-checkbox>
+                        </section>
                     </section>
                 </form>
             </div>

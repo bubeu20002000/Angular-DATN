@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../_services/product.service';
 import { Product } from '../_models/product.model';
-import { range } from 'rxjs';
 import Swal from 'sweetalert2';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { MatCheckboxChange } from '@angular/material/checkbox';
 
 @Component({
   selector: 'app-product-all',
@@ -31,25 +29,28 @@ export class ProductAllComponent implements OnInit {
   info: any;
   aval_size: any;
 
-  toppings: FormGroup;
-  men:any;
-  women:any;
-  unisex:any;
-
+  genders: FormGroup;
+  types: FormGroup;
   constructor(private prodService: ProductService, private fb: FormBuilder) {
-    this.toppings = fb.group({
-      pepperoni: false,
-      extracheese: false,
-      mushroom: false,
+    this.genders = fb.group({
+      men: false,
+      women: false,
+      unisex: false,
     });
+    this.types = fb.group({
+      ox: false,
+      lo: false,
+      bo: false,
+      sn: false,
+      cm: false,
+      fl: false,
+    });
+    this.numbers = this.rangeofSize(38, 49);
   }
 
   ngOnInit(): void {
-    this.numbers = this.rangeofSize(38, 49);
     this.retrieveProducts();
     this.getInfo();
-
-    
   }
 
   getInfo() {
@@ -155,15 +156,59 @@ export class ProductAllComponent implements OnInit {
     this.retrieveProducts();
   }
 
-  changeS(cb: MatCheckboxChange){
-    if(this.toppings.get('pepperoni')){
-      this.men = true;
-    }
-    if(this.toppings.get('extracheese')){
-      this.women = true;
-    }
-    if(this.toppings.get('mushroom')){
-      this.unisex = true;
+  changeGenders() {
+    if (this.genders.value.men && !this.genders.value.women && !this.genders.value.unisex) {
+      this.cate = 'Men';
+      this.retrieveProducts();
+    } else
+      if (!this.genders.value.men && this.genders.value.women && !this.genders.value.unisex) {
+        this.cate = 'Women';
+        this.retrieveProducts();
+      } else
+        if (!this.genders.value.men && !this.genders.value.women && this.genders.value.unisex) {
+          this.cate = 'Unisex';
+          this.retrieveProducts();
+        } else {
+          this.cate = '';
+          this.retrieveProducts();
+        }
+  }
+  changeTypes() {
+
+    if (
+      this.types.value.ox && !this.types.value.lo && !this.types.value.bo && !this.types.value.sn && !this.types.value.cm && !this.types.value.fl
+    ) {
+      this.type = 'Oxfords';
+      this.retrieveProducts();
+    } else if (
+      !this.types.value.ox && this.types.value.lo && !this.types.value.bo && !this.types.value.sn && !this.types.value.cm && !this.types.value.fl
+    ) {
+      this.type = 'Loafers';
+      this.retrieveProducts();
+    } else if (
+      !this.types.value.ox && !this.types.value.lo && this.types.value.bo && !this.types.value.sn && !this.types.value.cm && !this.types.value.fl
+    ) {
+      this.type = 'Boat Shoes';
+      this.retrieveProducts();
+    } else if (
+      !this.types.value.ox && !this.types.value.lo && !this.types.value.bo && this.types.value.sn && !this.types.value.cm && !this.types.value.fl
+    ) {
+      this.type = 'Sneakers';
+      this.retrieveProducts();
+    } else if (
+      !this.types.value.ox && !this.types.value.lo && !this.types.value.bo && !this.types.value.sn && this.types.value.cm && !this.types.value.fl
+    ) {
+      this.type = 'Clogs and Mules';
+      this.retrieveProducts();
+    } else if (
+      !this.types.value.ox && !this.types.value.lo && !this.types.value.bo && !this.types.value.sn && !this.types.value.cm && this.types.value.fl
+    ) {
+      this.type = 'Flats';
+      this.retrieveProducts();
+    } else {
+      this.type = '';
+      this.retrieveProducts();
     }
   }
+
 }
