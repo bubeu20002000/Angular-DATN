@@ -64,12 +64,12 @@
                         <div class="product">
                             <div class="product-wrap">
                                 <a routerLink="/product-single/{{product.id}}"><img class="img-fluid w-100 mb-3 img-first"
-                                        src="assets/images/322.jpg" alt="product-img" /></a>
+                                        src="assets/images/{{product.prodimg1}}" alt="product-img" /></a>
                                 <a routerLink="/product-single/{{product.id}}"><img class="img-fluid w-100 mb-3 img-second"
-                                        src="assets/images/444.jpg" alt="product-img" /></a>
+                                        src="assets/images/{{product.prodimg2}}" alt="product-img" /></a>
                             </div>
 
-                            <span class="onsale" *ngIf="product.prodstatus">Hết hàng</span>
+                            <span class="onsale" *ngIf="!product.prodstatus">Hết hàng</span>
                             <div class="product-hover-overlay">
                                 <a href="#"><i class="tf-ion-android-cart"></i></a>
                                 <a href="#"><i class="tf-ion-ios-heart"></i></a>
@@ -119,14 +119,14 @@
                                     genders.value.unisex = false; changeGenders()">Nam</mat-checkbox>
                             <mat-checkbox class="mr-1" formControlName="women" [checked]="genders.value.women" (change)="genders.value.men = false;
                                     genders.value.unisex = false; changeGenders()">Nữ</mat-checkbox>
-                            <mat-checkbox class="mr-1" formControlName="unisex" [checked]="genders.value.unisex"
+                            <!-- <mat-checkbox class="mr-1" formControlName="unisex" [checked]="genders.value.unisex"
                                 (change)="genders.value.women = false;
-                                    genders.value.men = false; changeGenders()">Unisex</mat-checkbox>
+                                    genders.value.men = false; changeGenders()">Unisex</mat-checkbox> -->
                         </section>
                     </section>
                     <!-- type -->
                     <section class="widget widget-sizes mb-5">
-                        <h3 class="widget-title h4 mb-4">Theo loại</h3>
+                        <h3 class="widget-title h4 mb-4">Theo thể loại</h3>
                         <section [formGroup]="types">
                             <mat-checkbox formControlName="ox" [checked]="types.value.ox"
                                 (change)="types.value.lo=false ;types.value.bo=false ;types.value.sn=false ;types.value.cm=false ;types.value.fl=false;changeTypes();"
@@ -142,7 +142,7 @@
                                 class="mr-2">Sneakers</mat-checkbox>
                             <mat-checkbox formControlName="cm" [checked]="types.value.cm"
                                 (change)=" types.value.ox=false; types.value.lo=false; types.value.bo=false; types.value.sn=false; types.value.fl=false;changeTypes();"
-                                class="mr-2">Clogs and Mules</mat-checkbox>
+                                class="mr-2">Mules</mat-checkbox>
                             <mat-checkbox formControlName="fl" [checked]="types.value.fl"
                                 (change)=" types.value.ox=false; types.value.lo=false; types.value.bo=false; types.value.sn=false; types.value.cm=false;changeTypes();"
                                 class="mr-2">Flats</mat-checkbox>

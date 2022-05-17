@@ -45,7 +45,7 @@ export class ProductAllComponent implements OnInit {
       cm: false,
       fl: false,
     });
-    this.numbers = this.rangeofSize(38, 49);
+    this.numbers = this.rangeofSize(36, 44);
   }
 
   ngOnInit(): void {
@@ -92,6 +92,8 @@ export class ProductAllComponent implements OnInit {
             icon: 'error',
             title: 'Đã xảy ra lỗi',
             text: 'error',
+            confirmButtonText: 'Xác nhận',
+            confirmButtonColor: 'black'
           })
         });
   }
@@ -188,7 +190,7 @@ export class ProductAllComponent implements OnInit {
     } else if (
       !this.types.value.ox && !this.types.value.lo && this.types.value.bo && !this.types.value.sn && !this.types.value.cm && !this.types.value.fl
     ) {
-      this.type = 'Boat Shoes';
+      this.type = 'Boats';
       this.retrieveProducts();
     } else if (
       !this.types.value.ox && !this.types.value.lo && !this.types.value.bo && this.types.value.sn && !this.types.value.cm && !this.types.value.fl
@@ -198,7 +200,7 @@ export class ProductAllComponent implements OnInit {
     } else if (
       !this.types.value.ox && !this.types.value.lo && !this.types.value.bo && !this.types.value.sn && this.types.value.cm && !this.types.value.fl
     ) {
-      this.type = 'Clogs and Mules';
+      this.type = 'Mules';
       this.retrieveProducts();
     } else if (
       !this.types.value.ox && !this.types.value.lo && !this.types.value.bo && !this.types.value.sn && !this.types.value.cm && this.types.value.fl

@@ -9,4 +9,7 @@ export class Product {
     prodstatus?: boolean;
     prodsize?: number;
     catid?:any;
+    prodimg1?:any;
+    prodimg2?:any;
+    prodcolor?:any;
 }

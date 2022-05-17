@@ -27,21 +27,4 @@ export class AppComponent implements OnInit {
       this.username = user.username;
     }
   }
-  
-  // logout(): void {
-    
-  //   if(this.router.url === '/orders' 
-  //     ||this.router.url === '/user'
-  //     ||this.router.url === '/login'
-  //     ||this.router.url === '/user-details'
-  //     ||this.router.url === '/user-details-edit'
-  //     ||this.router.url === '/user-address'
-  //     ){
-  //       this.tokenStorageService.signOut();
-  //       window.location.replace("/");
-  //   }else{
-  //     this.tokenStorageService.signOut();
-  //     window.location.reload();
-  //   }
-  // }
 }
