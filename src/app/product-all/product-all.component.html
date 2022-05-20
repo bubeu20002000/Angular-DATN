@@ -63,10 +63,12 @@
 
                         <div class="product">
                             <div class="product-wrap">
-                                <a routerLink="/product-single/{{product.id}}"><img class="img-fluid w-100 mb-3 img-first"
-                                        src="assets/images/{{product.prodimg1}}" alt="product-img" /></a>
-                                <a routerLink="/product-single/{{product.id}}"><img class="img-fluid w-100 mb-3 img-second"
-                                        src="assets/images/{{product.prodimg2}}" alt="product-img" /></a>
+                                <a routerLink="/product-single/{{product.id}}"><img
+                                        class="img-fluid w-100 mb-3 img-first" src="assets/images/{{product.prodimg1}}"
+                                        alt="product-img" /></a>
+                                <a routerLink="/product-single/{{product.id}}"><img
+                                        class="img-fluid w-100 mb-3 img-second" src="assets/images/{{product.prodimg2}}"
+                                        alt="product-img" /></a>
                             </div>
 
                             <span class="onsale" *ngIf="!product.prodstatus">Hết hàng</span>
@@ -108,6 +110,7 @@
                                     [ngClass]="{'active-button-size': selected == idx}"
                                     [disabled]="aval_size?.indexOf(number)===-1">{{number}}</button>
                             </li>
+                            <a class="pointer" (click)="openDialog()">Bảng kích cỡ</a>
                         </ul>
                     </section>
 
@@ -130,7 +133,7 @@
                         <section [formGroup]="types">
                             <mat-checkbox formControlName="ox" [checked]="types.value.ox"
                                 (change)="types.value.lo=false ;types.value.bo=false ;types.value.sn=false ;types.value.cm=false ;types.value.fl=false;changeTypes();"
-                                class="mr-2">Oxfords</mat-checkbox>
+                                class="mr-2">Oxfords and Derbies</mat-checkbox>
                             <mat-checkbox formControlName="lo" [checked]="types.value.lo"
                                 (change)=" types.value.ox=false; types.value.bo=false; types.value.sn=false; types.value.cm=false; types.value.fl=false;changeTypes();"
                                 class="mr-2">Loafers</mat-checkbox>

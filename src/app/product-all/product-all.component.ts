@@ -3,6 +3,8 @@ import { ProductService } from '../_services/product.service';
 import { Product } from '../_models/product.model';
 import Swal from 'sweetalert2';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogimgComponent } from '../_helpers/dialogimg/dialogimg.component';
 
 @Component({
   selector: 'app-product-all',
@@ -31,7 +33,7 @@ export class ProductAllComponent implements OnInit {
 
   genders: FormGroup;
   types: FormGroup;
-  constructor(private prodService: ProductService, private fb: FormBuilder) {
+  constructor(private prodService: ProductService, private fb: FormBuilder, public dialog: MatDialog) {
     this.genders = fb.group({
       men: false,
       women: false,
@@ -211,6 +213,12 @@ export class ProductAllComponent implements OnInit {
       this.type = '';
       this.retrieveProducts();
     }
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(DialogimgComponent, {
+      width: '550px',
+    });
   }
 
 }

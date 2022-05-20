@@ -37,8 +37,6 @@
 
 -------------------------------------------------------------------*/
 /*=== MEDIA QUERY ===*/
-/* @import url("https://fonts.googleapis.com/css?family=Poppins:400,700,800|Source+Sans+Pro:400|Catamaran:400,600,700"); */
-/* @import url('https://fonts.googleapis.com/css2?family=Oswald&family=Source+Sans+Pro&display=swap'); */
 .pointer{
   cursor: pointer;
 }
@@ -49,7 +47,8 @@ html, body {
 
 body {
   line-height: 1.7;
-  font-family: "Catamaran", sans-serif;
+  /* font-family: "Catamaran", sans-serif; */
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
 }
@@ -60,7 +59,8 @@ p {
 }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: "Catamaran", sans-serif;
+  /* font-family: "Catamaran", sans-serif; */
+  font-family: 'Roboto', sans-serif;
   font-weight: 600;
   color: #000;
 }
@@ -260,7 +260,8 @@ input[type="tel"]:focus {
   font-size: 38px;
   line-height: 48px;
   margin-bottom: 0px;
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
+  font-family: 'Roboto', sans-serif;
   text-transform: capitalize;
 }
 
@@ -809,7 +810,7 @@ a.text-primary:hover {
 
 .slider .slider-caption h1 {
   font-weight: 800;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 90px;
   line-height: 90px;
 }
@@ -1171,7 +1172,8 @@ a.text-primary:hover {
 }
 
 .single-product-details .product-price {
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
+  font-family: 'Roboto', sans-serif;
 }
 
 .single-product-details .product-price del {
@@ -1248,7 +1250,8 @@ a.text-primary:hover {
 .product-info-tabs .nav-tabs a {
   color: #000;
   font-size: 22px;
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
+  font-family: 'Roboto', sans-serif;
   font-weight: 700;
 }
 
@@ -1798,7 +1801,7 @@ a.text-primary:hover {
 
 .ads {
   background: rgba(252, 114, 104, 0.06);
-  background: url("../images/counter.jpg") no-repeat;
+  background: url("../images/slide3.jpg") no-repeat;
   background-size: cover;
   position: relative;
 }
@@ -1904,7 +1907,8 @@ table.shop_table_responsive {
 }
 
 .cart-info h4 {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Roboto', sans-serif;
+  /* font-family: "Poppins", sans-serif; */
 }
 
 .cart-info h5 {
@@ -1912,7 +1916,8 @@ table.shop_table_responsive {
 }
 
 .cart-info ul span {
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
+  font-family: 'Roboto', sans-serif;
   font-weight: 700;
 }
 
@@ -1921,7 +1926,8 @@ table.shop_table_responsive {
 }
 
 .amount {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Roboto', sans-serif;
+  /* font-family: "Poppins", sans-serif; */
 }
 
 .user-dashboard .nav-pills {

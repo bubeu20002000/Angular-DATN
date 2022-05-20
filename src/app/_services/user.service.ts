@@ -29,6 +29,7 @@ export class UserService {
   updateEmail(id: any, data: any): Observable<any> {
     return this.http.put(API_URL + 'updateEmail/' + id, data, { headers: this.header });
   }
+
   updatePhoneNumber(id: any, data: any): Observable<any> {
     return this.http.put(API_URL + 'updatePhoneNumber/' + id, data, { headers: this.header });
   }

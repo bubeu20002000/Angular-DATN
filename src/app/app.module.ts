@@ -32,10 +32,14 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatButtonModule } from '@angular/material/button';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { FilterprodsPipe } from './_pipe/filterprods.pipe';
+import { PageAboutComponent } from './page-about/page-about.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DialogimgComponent } from './_helpers/dialogimg/dialogimg.component';
+import { DatePipe } from '@angular/common';
 
 
 @NgModule({
@@ -59,6 +63,9 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     PageNotfoundComponent,
     MainComponent,
     PasswordResetComponent,
+    FilterprodsPipe,
+    PageAboutComponent,
+    DialogimgComponent,
 
   ],
   imports: [
@@ -77,8 +84,9 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatButtonModule,
     MatRadioModule,
     MatCheckboxModule,
+    MatDialogModule
   ],
-  providers: [authInterceptorProviders],
+  providers: [authInterceptorProviders, DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

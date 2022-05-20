@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from '../_models/product.model';
+import { ProductService } from '../_services/product.service';
 import { UserService } from '../_services/user.service';
 
 @Component({
@@ -7,13 +9,13 @@ import { UserService } from '../_services/user.service';
   styleUrls: ['./page-home.component.css']
 })
 export class PageHomeComponent implements OnInit {
-  
-  //Slider settings
-  slideConfig = {"slidesToShow": 1, "slidesToScroll": 1} ;
 
+  slideConfig = { "slidesToShow": 1, "slidesToScroll": 1 };
   content?: string;
-
-  constructor(private userService: UserService) { }
+  newProds: Product[]=[];
+  filterM = {prodname: 'Nam'};
+  filterW = {prodname: 'Nữ'};
+  constructor(private userService: UserService, private prodService: ProductService) { }
 
   ngOnInit(): void {
     // this.userService.getPublicContent().subscribe(
@@ -24,7 +26,14 @@ export class PageHomeComponent implements OnInit {
     //     this.content = JSON.parse(err.error).message;
     //   }
     // );
+    this.getNewProducts();
   }
 
-  
+  getNewProducts(){
+    this.prodService.getNewProds().subscribe(res=>{
+      this.newProds = res;
+    })
+  }
+
+
 }

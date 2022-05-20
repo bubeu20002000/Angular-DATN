@@ -16,6 +16,7 @@ import { UserAddressEditComponent } from './user-address-edit/user-address-edit.
 import { PageNotfoundComponent } from './page-notfound/page-notfound.component';
 import { MainComponent } from './_admin/main/main.component';
 import { PasswordResetComponent } from './password-reset/password-reset.component';
+import { PageAboutComponent } from './page-about/page-about.component';
 
 const routes: Routes = [
   { path:"", component:PageHomeComponent },
@@ -35,6 +36,8 @@ const routes: Routes = [
   { path:"signup", component:PageSignupComponent },
   { path:"forgot-password", component:PasswordForgotComponent },
   { path:"reset-password", component:PasswordResetComponent },
+
+  { path:"about", component:PageAboutComponent},
 
   {path: '404', component: PageNotfoundComponent},
   {path: '**', redirectTo: '/404'},

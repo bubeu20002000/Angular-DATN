@@ -5,7 +5,7 @@
         <div class="login-form border p-5">
             <div class="text-center heading">
             <h2 class="mb-2">Đăng kí</h2>
-            <p class="lead">Đã có tài khoản? <a routerLink="/login"> Đăng nhập</a></p>
+            <p class="lead">Đã có tài khoản?<br><a routerLink="/login"> Đăng nhập</a></p>
             </div>
 
             <form 
@@ -80,25 +80,19 @@
                 <!-- End Validation -->
             </div>
             <!-- End Password -->
-            
-            <!-- <div class="form-group">
-                <label for="#">Confirm Password</label>
-                <input type="text" class="form-control" placeholder="Confirm Password"> 
-            </div> -->
-
             <div class="form-group">
                 <button class="btn btn-main mt-3 btn-block">Đăng kí</button>
             </div>
             
             <!-- Notice -->
-            <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+            <div class="alert alert-warning text-center" *ngIf="f.submitted && isSignUpFailed">
                 Đăng kí tài khoản thất bại!<br />{{ errorMessage }}
             </div>
             <!-- End Notice -->
             </form>
 
             <!-- Notice -->
-            <div class="alert alert-success" *ngIf="isSuccessful">
+            <div class="alert alert-success text-center" *ngIf="isSuccessful">
                 Đăng kí tài khoản thành công!
             </div>
             <!-- End Notice -->

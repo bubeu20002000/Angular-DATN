@@ -26,7 +26,7 @@ export class FunctionsService {
       ||this.router.url === '/user-details'
       ||this.router.url === '/user-details-edit'
       ||this.router.url === '/user-address'
-      ||this.router.url === '/user-address-edit'
+      ||this.router.url === '/cart'
       ){
         this.tokenStorageService.signOut();
         window.location.replace("/");

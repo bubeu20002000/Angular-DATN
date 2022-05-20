@@ -5,7 +5,7 @@
                 <div class="login-form border p-5">
                     <div class="text-center heading">
                         <h2 class="mb-2">Đăng nhập</h2>
-                        <p class="lead" *ngIf="!isLoggedIn">Chưa có tài khoản? <a routerLink="/signup">Đăng kí</a></p>
+                        <p class="lead" *ngIf="!isLoggedIn">Chưa có tài khoản?<br><a routerLink="/signup">Đăng kí</a></p>
                         <p class="lead" *ngIf="isLoggedIn"><a routerLink="/">Trang chủ</a></p>
                     </div>
 
@@ -14,7 +14,7 @@
                         <!-- Username -->
                         <div class="form-group mb-4">
                             <label for="username">Điền tên tài khoản</label>
-                            <input type="text" class="form-control" placeholder="Enter Username" name="username"
+                            <input type="text" class="form-control" placeholder="Tên tài khoản" name="username"
                                 [(ngModel)]="form.username" required #username="ngModel">
                             <!-- validation -->
                             <div class="alert alert-danger" role="alert" *ngIf="username.errors && f.submitted">
@@ -27,7 +27,7 @@
                         <div class="form-group">
                             <label for="#">Điền mật khẩu</label>
                             <a class="float-right" routerLink="/forgot-password">Quên mật khẩu?</a>
-                            <input type="password" class="form-control" placeholder="Enter Password" name="password"
+                            <input type="password" class="form-control" placeholder="Mật khẩu" name="password"
                                 [(ngModel)]="form.password" required minlength="6" #password="ngModel">
                             <!-- Validation -->
                             <div class="alert alert-danger" role="alert" *ngIf="password.errors && f.submitted">

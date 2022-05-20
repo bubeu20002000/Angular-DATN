@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import { CartService } from '../_services/cart.service';
 import { ProductService } from '../_services/product.service';
 import { TokenStorageService } from '../_services/token-storage.service';
 
@@ -13,9 +14,11 @@ export class ProductDetailsComponent implements OnInit {
   isLoggedIn: any;
   selected: any;
   id: any;
+  user_id: any;
   details: any;
   prodname: any;
   sku: any;
+  type:any;
   price: any;
   cate: any;
   img_one: any;
@@ -25,12 +28,16 @@ export class ProductDetailsComponent implements OnInit {
   status = false;
   instock: String[] = [];
   size: String[] = [];
+  size_selected: any;
+  check = false;
   stock: any;
-  constructor(private route: ActivatedRoute, private tokenStorageService: TokenStorageService, private router: Router, private prodService: ProductService) {
+  quantity = 1;
+  constructor(private route: ActivatedRoute, private tokenStorageService: TokenStorageService, private router: Router, private prodService: ProductService, private cartService: CartService) {
     this.id = this.route.snapshot.paramMap.get('id');
   }
 
   ngOnInit(): void {
+    this.user_id = this.tokenStorageService.getUser().id;
     this.isLoggedIn = !!this.tokenStorageService.getToken();
     this.getProdDetails();
   }
@@ -41,6 +48,7 @@ export class ProductDetailsComponent implements OnInit {
       this.prodname = res['prodname'];
       this.sku = res['sku'];
       this.price = res['prodprice'];
+      this.type = res['prodtype'];
       if (this.cate = res['categories']['catname'] == 'Men') {
         this.cate = 'Nam'
       } else {
@@ -71,25 +79,64 @@ export class ProductDetailsComponent implements OnInit {
       })
     })
   }
-  click(i: any) {
+  click(i: any, size: any) {
     this.selected = i;
     this.stock = this.instock[i];
+    this.check = true;
+    this.size_selected = size;
+  }
+
+  checkSize() {
+    if (this.check && this.stock > 0) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   isLogged() {
     if (this.isLoggedIn) {
-      return Swal.fire({
-        icon: 'info',
-        title: 'Thông báo',
-        text: 'Sản phẩm đã được thêm vào giỏ hàng.',
-        confirmButtonText: 'Xác nhận',
-        confirmButtonColor: 'black'
-      })
+      if (this.checkSize()) {
+        if (
+          this.cartService.addtoCart(this.sku, this.size_selected, this.user_id, this.quantity).subscribe()
+        ) {
+          return Swal.fire({
+            icon: 'info',
+            title: 'Thông báo',
+            text: 'Sản phẩm đã được thêm vào giỏ hàng.',
+            confirmButtonText: 'Xác nhận',
+            confirmButtonColor: 'black'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              window.location.reload();
+            }
+          })
+        } else {
+          Swal.fire({
+            icon: 'error',
+            title: 'Thông báo',
+            text: 'Hết hàng',
+            confirmButtonText: 'Xác nhận',
+            confirmButtonColor: 'black'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              window.location.reload();
+            }
+          })
+          return null;
+        }
+      } else {
+        return Swal.fire({
+          icon: 'info',
+          title: 'Thông báo',
+          text: 'Bạn chưa chọn size',
+          confirmButtonText: 'Xác nhận',
+          confirmButtonColor: 'black'
+        })
+      }
     }
     else {
       return this.router.navigate(['/login']);
-
     }
   }
-
 }
